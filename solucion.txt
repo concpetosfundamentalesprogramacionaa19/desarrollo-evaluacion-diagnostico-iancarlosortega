@@ -1,0 +1,61 @@
+Inicio
+
+	##DECLARACION E INICIALIZACION DE VARIABLES
+	
+	num_autos,i[0-n];marca,x[a-z][A-Z];origen,x[a-z][A-Z];costo,d[0-n];impuesto,i[0-n];precio_total,d[0-n];o1,o2,o3,o4,x[a-z][A-Z];venta_autos,d[0-n];total_impuestos,d[0-n];cant_impuestos,d[0-n]
+	num_autos <-0,marca <-" ",origen <-" ", costo <-0,impuesto <-0, precio_total <-0,o1 <-" ",o2 <-" ",o3 <-" ", o4 <-" ",venta_autos <-0:total_impuestos<-0;cant_impuestos<-0]
+	
+	Escribir "Ingrese el n?mero de autos importados"
+	Leer num_autos
+
+	##PROCESOS
+	
+	Para (i<-1, i<=num_autos, i++)
+		Escribir "Marca del auto"
+		Leer marca
+		Escribir "Origen del auto"
+		Leer origen
+		Escribir "Costo del auto"
+		Leer costo
+		
+		Si (origen==Argentina)entonces:
+			impuesto<- 0.2
+			o1<-o1+1
+		Sino:
+			si (origen==Colombia) entonces:
+				impuesto<- 0.25
+				o2<- o2+1
+			Sino:
+				Si(origen==Chile) entonces:
+					impuesto<- 0.3
+					o3<- o3+1
+				sino:
+					impuesto<- 0.4
+					o4<- o4+1
+				Fin_si
+			Fin_si
+		Fin_si
+		
+		cant_impuesto<-costo(impuesto)
+		precio_total<- costo+cant_impuesto
+		total_impuestos<- total_impuestos+cant_impuesto
+		venta_autos<-venta_autos+precio_total
+	Fin_Para
+	
+	##IMPRESION DE RESULTADOS FINALES
+	
+	Escribir "El numero total de autos importados es:"
+	Leer num_autos
+	Escribir "La cantidad total de impuestos generados es:"
+	Leer total_impuestos
+	Escribir "El total de los precios de venta de autos es:"
+	Leer venta_autos
+	Escribir "El total de autos importados de Argentinda es:"
+	Leer o1
+	Escribir "El total de autos importados de Colombia es:"
+	Leer o2
+	Escribir "El total de autos importados de Chile es:"
+	Leer o3
+	Escribir "El total de autos importados de otros paises es:"
+	Leer o4
+Fin
